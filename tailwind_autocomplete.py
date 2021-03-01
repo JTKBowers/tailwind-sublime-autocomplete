@@ -11,7 +11,7 @@ class tailwindCompletions(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
 
         matchHTMLString = view.match_selector(locations[0], "text.html string.quoted")
-        matchJSString = view.match_selector(locations[0], "source.js string.quoted")
+        matchJSString = view.match_selector(locations[0], "source.js|source.jsx|source.ts|source.tsx string.quoted")
 
         if matchHTMLString or matchJSString:
 
